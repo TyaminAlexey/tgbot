@@ -1,0 +1,3 @@
+
+TOKEN = '1765010138:AAEDV9XZOWyeEpBB5aGRVquZ64V_-NdGz7M'
+APP_NAME = 'telegrambotq'
