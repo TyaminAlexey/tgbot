@@ -13,13 +13,15 @@
 
 # In[1]:
 
-
+from flask import Flask, request
 import nltk
+import os
 import random
 from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # In[84]:
+server = Flask(__name__)
 
 
 BOT_CONFIG = {'intents': {'hello': {
@@ -1746,7 +1748,7 @@ def run_bot(update: Update, context: CallbackContext) -> None:
     print(stats)
     print()
 
-
+@server.route("/")
 def main():
     """Start the bot."""
     updater = Updater("1765010138:AAEDV9XZOWyeEpBB5aGRVquZ64V_-NdGz7M", use_context=True)
@@ -1767,7 +1769,8 @@ main()
 
 # In[ ]:
 
-
+if __name__ == "__main__":
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
 # In[ ]:
 
 
