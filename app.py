@@ -1615,7 +1615,7 @@ def json_example():
 
 
     return {
-        'text': reqjson
+        'text': bot(reqjson)
     }, 200
 
 # A welcome message to test our server
