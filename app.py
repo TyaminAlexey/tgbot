@@ -42,7 +42,7 @@ class ToDo(Resource):
     def get(self, todo_id):
         task = TodoModel.query.filter_by(id=todo_id).first()
         if not task:
-            abort(404, massage= "Couls not find task")
+            abort(404, massage="Couls not find task")
         return task
 
     @marshal_with(resource_fields)
@@ -50,7 +50,7 @@ class ToDo(Resource):
         args: task_post_args.parse_args()
         task = TodoModel.query.filter_by(id=todo_id).first()
         if task:
-            abort(409, massage= "task id taken...")
+            abort(409, massage="task id taken...")
 
         todo = TodoModel(id=todo_id, task=args['task'], summary=args['summary'])
         db.session.add(todo)
@@ -62,7 +62,7 @@ class ToDo(Resource):
         args: task_update_args.parse_args()
         task = TodoModel.query.filter_by(id=todo_id).first()
         if not task:
-            abort(404, massage= "task doesnt")
+            abort(404, massage="task doesnt")
         if args['task']:
             task.task = args['task']
         if args['summary']:
