@@ -1451,7 +1451,7 @@ def get_answer_by_intent(intent):
 # In[7]:
 import urllib.request
 
-fp = urllib.request.urlopen('https://storage.yandexcloud.net/txtdata/tg-bot-txt/dialogues.txt')
+fp = urllib.request.urlopen('https://storage.yandexcloud.net/txtdata/tg-bot-txt/dialogues1.txt')
 
 mybytes = fp.read()
 mystr = mybytes.decode("utf8")
