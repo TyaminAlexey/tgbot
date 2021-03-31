@@ -1579,7 +1579,7 @@ def bot(replica):
 
         if answer:
             stats['intents'] += 1
-        return answer
+            return answer
 
     # генеративная модель
     # print(" генеративная модель replica: ", replica)
@@ -1590,10 +1590,10 @@ def bot(replica):
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
         response = requests.get(send_text)
         time.sleep(random.uniform(4, 5))
-
+        return answer
         # если более 12-ти символов делаем дополнительную задержку
 
-    return answer
+    
 
     # заглушка
 
