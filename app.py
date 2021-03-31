@@ -1574,7 +1574,7 @@ def bot(replica):
         answer = get_answer_by_intent(intent)
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
         response = requests.get(send_text)
-        # time.sleep(random.uniform(2, 3))
+        time.sleep(random.uniform(2, 3))
         # если более 12-ти символов делаем дополнительную задержкуuuuuuuuuuuuuuuuuutyyyyyyyyyyyyy
 
         if answer:
@@ -1589,6 +1589,7 @@ def bot(replica):
         stats['generative'] += 1
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
         response = requests.get(send_text)
+        time.sleep(random.uniform(4, 5))
 
         # если более 12-ти символов делаем дополнительную задержку
 
@@ -1602,6 +1603,7 @@ def bot(replica):
 
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
     response = requests.get(send_text)
+    time.sleep(random.uniform(2, 3))
 
     return answer
 
