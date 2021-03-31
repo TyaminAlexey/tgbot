@@ -1155,7 +1155,7 @@ BOT_CONFIG = {'intents': {'hello': {
         'examples': ['ты болел ковид', 'пцр отрицательный', 'не кашляешь', 'тест сдал',
                      'Есть симптомы'], 'responses': ['Роботы не болеют!']},
     'letsdo': {'examples': ['выпьем кофе', 'пошли в кино', 'пошли гулять'],
-               'responses': ['С удовольствием! Я всегда в твоем смартфоне!']}, 'TVset': {
+               'responses': ['С удовольствием! Только у мамы отпрошусь']}, 'TVset': {
         'examples': ['Что нравится смотреть по телеку', 'Что смотришь по ящику', 'Какие телепередачи смотришь'],
         'responses': ['Документальные фильмы', 'Научно-популярный канал', 'Новости', 'Сериалы', 'Слушаю музыку']},
     'programming': {'examples': ['На каком языке кодишь', 'Каком языке программируешь'],
@@ -1603,7 +1603,7 @@ def bot(replica):
 
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
     response = requests.get(send_text)
-    time.sleep(random.uniform(2, 3))
+    #time.sleep(random.uniform(2, 3))
 
     return answer
 
