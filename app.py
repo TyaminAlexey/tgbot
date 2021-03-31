@@ -1600,10 +1600,11 @@ def bot(replica):
     memreplica = replica
     answer = get_stub(memreplica)
     stats['stubs'] += 1
-
+    time.sleep(random.uniform(2, 3))
+    
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + replica + ' | ' + answer
     response = requests.get(send_text)
-    #time.sleep(random.uniform(2, 3))
+    
 
     return answer
 
